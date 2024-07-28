@@ -1,0 +1,288 @@
+# Menguji API untuk menambahkan pengguna
+POST http://localhost:3000/api/pengguna
+Content-Type: application/json
+
+{
+  "nama": "Admin",
+  "email": "admin@example.com",
+  "kata_sandi": "password",
+  "peran": "admin"
+}
+
+### 
+
+POST http://localhost:3000/api/pengguna
+Content-Type: application/json
+
+{
+  "nama": "Istri",
+  "email": "istri@example.com",
+  "kata_sandi": "password",
+  "peran": "anggota_keluarga"
+}
+
+###
+
+POST http://localhost:3000/api/pengguna
+Content-Type: application/json
+
+{
+  "nama": "Anak Pertama",
+  "email": "anakpertama@example.com",
+  "kata_sandi": "password",
+  "peran": "anggota_keluarga"
+}
+
+###
+
+POST http://localhost:3000/api/pengguna
+Content-Type: application/json
+
+{
+  "nama": "Anak Kedua",
+  "email": "anakkedua@example.com",
+  "kata_sandi": "password",
+  "peran": "anggota_keluarga"
+}
+
+###
+# Menguji API untuk menambahkan gaji
+POST http://localhost:3000/api/gaji
+Content-Type: application/json
+
+{
+  "id_pengguna": 1,
+  "bulan_tahun": "2024-06-01",
+  "jumlah_total": 5000000,
+  "jumlah_sisa": 1500000
+}
+
+###
+
+# Menguji API untuk menambahkan kebutuhan
+POST http://localhost:3000/api/kebutuhan
+Content-Type: application/json
+
+{
+  "id_gaji": 1,
+  "nama_kebutuhan": "Belanja Bulanan",
+  "jumlah_alokasi": 2500000,
+  "id_pengguna": 2
+}
+
+###
+
+POST http://localhost:3000/api/kebutuhan
+Content-Type: application/json
+
+{
+  "id_gaji": 1,
+  "nama_kebutuhan": "Uang Anak Pertama",
+  "jumlah_alokasi": 500000,
+  "id_pengguna": 3
+}
+
+###
+
+POST http://localhost:3000/api/kebutuhan
+Content-Type: application/json
+
+{
+  "id_gaji": 1,
+  "nama_kebutuhan": "Uang Anak Kedua",
+  "jumlah_alokasi": 500000,
+  "id_pengguna": 4
+}
+
+###
+# Menguji API untuk menambahkan pengeluaran
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 1,
+  "tanggal_pengeluaran": "2024-06-12",
+  "jumlah_pengeluaran": 1500000,
+  "deskripsi": "Belanja di Hero"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 1,
+  "tanggal_pengeluaran": "2024-06-26",
+  "jumlah_pengeluaran": 300000,
+  "deskripsi": "Belanja di Pasar"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 1,
+  "tanggal_pengeluaran": "2024-06-29",
+  "jumlah_pengeluaran": 200000,
+  "deskripsi": "Belanja di Indomaret"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 2,
+  "tanggal_pengeluaran": "2024-06-01",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin Sekolah Minggu Pertama"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 2,
+  "tanggal_pengeluaran": "2024-06-08",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin Sekolah Minggu Kedua"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 2,
+  "tanggal_pengeluaran": "2024-06-15",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin Sekolah Minggu Ketiga"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 2,
+  "tanggal_pengeluaran": "2024-06-24",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin Sekolah Minggu Keempat"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 2,
+  "tanggal_pengeluaran": "2024-06-30",
+  "jumlah_pengeluaran": 80000,
+  "deskripsi": "Belanja di Kantin Sekolah Minggu Kelima"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 3,
+  "tanggal_pengeluaran": "2024-06-01",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin TK Minggu Pertama"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 3,
+  "tanggal_pengeluaran": "2024-06-08",
+  "jumlah_pengeluaran": 100000,
+  "deskripsi": "Belanja di Kantin TK Minggu Kedua"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 3,
+  "tanggal_pengeluaran": "2024-06-15",
+  "jumlah_pengeluaran": 50000,
+  "deskripsi": "Belanja di Kantin TK Minggu Ketiga"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 3,
+  "tanggal_pengeluaran": "2024-06-24",
+  "jumlah_pengeluaran": 50000,
+  "deskripsi": "Belanja di Kantin TK Minggu Keempat"
+}
+
+###
+
+POST http://localhost:3000/api/pengeluaran
+Content-Type: application/json
+
+{
+  "id_kebutuhan": 3,
+  "tanggal_pengeluaran": "2024-06-30",
+  "jumlah_pengeluaran": 50000,
+  "deskripsi": "Belanja di Kantin TK Minggu Kelima"
+}
+
+###
+
+# Menguji API untuk menambahkan tabungan
+POST http://localhost:3000/api/tabungan
+Content-Type: application/json
+
+{
+  "id_pengguna": 2,
+  "jumlah": 500000,
+  "disimpan_pada": "2024-06-30"
+}
+
+###
+
+POST http://localhost:3000/api/tabungan
+Content-Type: application/json
+
+{
+  "id_pengguna": 3,
+  "jumlah": 20000,
+  "disimpan_pada": "2024-06-30"
+}
+
+###
+
+POST http://localhost:3000/api/tabungan
+Content-Type: application/json
+
+{
+  "id_pengguna": 2,
+    "bulan": 6,
+    "tahun": 2024,
+    "jumlah": 500000
+}
+
+
