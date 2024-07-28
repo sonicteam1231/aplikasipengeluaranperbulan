@@ -1,21 +1,21 @@
 import React from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 
-const Navbar = ({ tahunOptions, bulanOptions, penggunaOptions, setTahun, setBulan, setPengguna, defaultTahun, defaultBulan }) => {
+const Navbar = ({ tahunOptions, bulanOptions, penggunaOptions, setTahun, setBulan, setPengguna }) => {
     return (
         <nav className="flex items-center justify-between bg-purple-200 p-4">
             <div className="flex items-center">
                 <Dropdown 
                     label="Pilih Tahun" 
                     options={tahunOptions} 
-                    onChange={(e) => setTahun(e.target.value)} 
-                    defaultValue={defaultTahun}
+                    onChange={(e) => setTahun(Number(e.target.value))} // Ensure value is a number
+                    defaultValue={new Date().getFullYear()}
                 />
                 <Dropdown 
                     label="Pilih Bulan" 
                     options={bulanOptions} 
-                    onChange={(e) => setBulan(e.target.value)} 
-                    defaultValue={defaultBulan}
+                    onChange={(e) => setBulan(Number(e.target.value))} // Ensure value is a number
+                    defaultValue={new Date().getMonth() + 1}
                 />
             </div>
             <Dropdown 
