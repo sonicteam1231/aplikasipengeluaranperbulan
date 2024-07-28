@@ -1,16 +1,15 @@
 import React from 'react';
 
-const Dropdown = ({ label, options, onChange, defaultValue }) => {
+const Dropdown = ({ label, options, onChange }) => {
     return (
-        <div className="mr-4">
-            <label className="block text-sm font-medium text-gray-700">{label}</label>
+        <div className="relative mx-2">
+            <label className="block text-gray-700 mb-1">{label}</label>
             <select 
-                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                onChange={onChange} 
-                defaultValue={defaultValue}
+                onChange={onChange}
+                className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
             >
-                {options.map((option) => (
-                    <option key={option.value} value={option.value}>
+                {options.map((option, index) => (
+                    <option key={index} value={option.value}>
                         {option.label}
                     </option>
                 ))}

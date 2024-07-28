@@ -4,13 +4,9 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import Admin from './Admin';
 import Istri from './Istri';
 
-// Fungsi untuk mendapatkan tahun dan bulan saat ini
-const getCurrentYear = () => new Date().getFullYear();
-const getCurrentMonth = () => new Date().getMonth() + 1; // Bulan dimulai dari 0, jadi tambahkan 1
-
 const Home = () => {
-    const [tahun, setTahun] = useState(getCurrentYear());
-    const [bulan, setBulan] = useState(getCurrentMonth());
+    const [tahun, setTahun] = useState('');
+    const [bulan, setBulan] = useState('');
     const [pengguna, setPengguna] = useState('admin');  // Default ke admin untuk testing
 
     const tahunOptions = [
@@ -55,7 +51,7 @@ const Home = () => {
                 />
                 <main className="flex-1 bg-gray-50 p-4 m-4 rounded shadow">
                     {pengguna === 'admin' && <Admin bulan={bulan} tahun={tahun} />}
-                    {pengguna === 'istri' && <Istri bulan={bulan} tahun={tahun} />}
+                    {pengguna === 'istri' && <Istri />}
                     {/* Konten untuk pengguna lainnya bisa ditambahkan di sini */}
                 </main>
             </div>
