@@ -4,11 +4,10 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import Admin from './Admin';
 import Istri from './Istri';
 
-// Fungsi untuk mendapatkan tahun dan bulan saat ini
-const getCurrentYear = () => new Date().getFullYear();
-const getCurrentMonth = () => new Date().getMonth() + 1; // Bulan dimulai dari 0, jadi tambahkan 1
-
 const Home = () => {
+    const getCurrentYear = () => new Date().getFullYear();
+    const getCurrentMonth = () => new Date().getMonth() + 1; // Bulan dimulai dari 0, jadi tambahkan 1
+
     const [tahun, setTahun] = useState(getCurrentYear());
     const [bulan, setBulan] = useState(getCurrentMonth());
     const [pengguna, setPengguna] = useState('admin');  // Default ke admin untuk testing
@@ -52,10 +51,12 @@ const Home = () => {
                     setTahun={setTahun}
                     setBulan={setBulan}
                     setPengguna={setPengguna}
+                    defaultTahun={tahun} // Pass defaultTahun to Navbar
+                    defaultBulan={bulan} // Pass defaultBulan to Navbar
                 />
                 <main className="flex-1 bg-gray-50 p-4 m-4 rounded shadow">
-                    {pengguna === 'admin' && <Admin bulan={bulan} tahun={tahun} />}
-                    {pengguna === 'istri' && <Istri bulan={bulan} tahun={tahun} />}
+                    {pengguna === 'admin' && <Admin tahun={tahun} bulan={bulan} />}
+                    {pengguna === 'istri' && <Istri tahun={tahun} bulan={bulan} />}
                     {/* Konten untuk pengguna lainnya bisa ditambahkan di sini */}
                 </main>
             </div>

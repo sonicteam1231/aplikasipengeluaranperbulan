@@ -1,11 +1,7 @@
 import React from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 
-// Definisikan fungsi untuk mendapatkan tahun dan bulan saat ini
-const getCurrentYear = () => new Date().getFullYear();
-const getCurrentMonth = () => new Date().getMonth() + 1; // Bulan dimulai dari 0, jadi tambahkan 1
-
-const Navbar = ({ tahunOptions, bulanOptions, penggunaOptions, setTahun, setBulan, setPengguna }) => {
+const Navbar = ({ tahunOptions, bulanOptions, penggunaOptions, setTahun, setBulan, setPengguna, defaultTahun, defaultBulan }) => {
     return (
         <nav className="flex items-center justify-between bg-purple-200 p-4">
             <div className="flex items-center">
@@ -13,13 +9,13 @@ const Navbar = ({ tahunOptions, bulanOptions, penggunaOptions, setTahun, setBula
                     label="Pilih Tahun" 
                     options={tahunOptions} 
                     onChange={(e) => setTahun(e.target.value)} 
-                    defaultValue={getCurrentYear()}
+                    defaultValue={defaultTahun}
                 />
                 <Dropdown 
                     label="Pilih Bulan" 
                     options={bulanOptions} 
                     onChange={(e) => setBulan(e.target.value)} 
-                    defaultValue={getCurrentMonth()}
+                    defaultValue={defaultBulan}
                 />
             </div>
             <Dropdown 
